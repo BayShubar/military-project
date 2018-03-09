@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="UTF-8">
+      <title>Hello World!</title>
+    </head>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <body>
+      <div id="root">
+          <div id="menu_bar">
+              <div id="header">
+                <h4 class = 'logo'>Military power</h4>
+                <button class = 'btn_menu'>Полное подготовка</button>
+                <button class = 'btn_menu'>пристрелка цели</button>
+              </div>
+          </div>  
+          <div id="content_bar">
+            <div id = 'first_content'>
+
+              <div class="input-group">
+                <span class="input-group-addon">X кнп: </span>
+                <input id="x" type="number" class="form-control"  placeholder="X кнп ...">
+              </div>
+              
+              <div class="input-group">
+                  <span class="input-group-addon">У кнп: </span>
+                  <input id="y" type="number" class="form-control"  placeholder="У кнп ...">
+              </div>
+
+              <div class="input-group">
+                  <span class="input-group-addon">h кнп: </span>
+                  <input id="h" type="number" class="form-control"  placeholder="h кнп ...">
+              </div>
+              <hr/>
+              <div class="input-group">
+                  <span class="input-group-addon">X оп: </span>
+                  <input id="x2" type="number" class="form-control"  placeholder="X оп ...">
+              </div>
+
+              <div class="input-group">
+                  <span class="input-group-addon">Y оп: </span>
+                  <input id="y2" type="number" class="form-control"  placeholder="Y оп ...">
+              </div>
+
+              <div class="input-group">
+                  <span class="input-group-addon">h оп: </span>
+                  <input id="h2" type="number" class="form-control"  placeholder="h оп ...">
+              </div>
+              <hr/>
+              <div class="input-group">
+                  <span class="input-group-addon">α oн: </span>
+                  <input id="a" type="number" class="form-control"  placeholder="α oн ...">
+              </div>
+
+              <div class="input-group">
+                  <span class="input-group-addon">количество символов: </span>
+                  <select class="form-control" id="number">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                      <option>9</option>
+                      <option>10</option>
+                      <option>11</option>
+                      <option>12</option>
+                    </select>
+              </div>
+              
+              <h1>
+                Данные о цели
+              </h1>
+
+              <div>
+                <button type="button" class="btn btn-primary" onclick="showFirstOption()">плоские прямоугольные</button>
+                <button type="button" class="btn btn-primary" onclick="showSecondOption()">полярные координаты</button>
+                <div id = 'first_opt' class = 'data_input'>
+                    <div class="input-group">
+                        <span class="input-group-addon">Xy: </span>
+                        <input id="Xy" type="number" class="form-control"  placeholder="Xy ...">
+                    </div> <br/>
+                    <div class="input-group">
+                        <span class="input-group-addon">Yy: </span>
+                        <input id="Yy" type="number" class="form-control"  placeholder="Yy ...">
+                    </div><br/>
+                    <div class="input-group">
+                        <span class="input-group-addon">hy: </span>
+                        <input id="hy" type="number" class="form-control"  placeholder="hy ...">
+                    </div><br/>
+                </div>
+                <div id = 'second_opt' class = 'data_input'>
+                    <div class="input-group">
+                        <span class="input-group-addon">αk: </span>
+                        <input id="aK" type="number" class="form-control"  placeholder="αk ...">
+                    </div> <br/>
+                    <div class="input-group">
+                        <span class="input-group-addon">Дк: </span>
+                        <input id="Dk" type="number" class="form-control"  placeholder="Дк ...">
+                    </div><br/>
+                    <div class="input-group">
+                        <span class="input-group-addon">Мц: </span>
+                        <input id="mC" type="number" class="form-control"  placeholder="Мц ...">
+                    </div><br/>
+                </div>
+              </div>
+
+
+              <button type="button" class="btn btn-primary">вычислить</button>
+              
+
+            </div>    
+            
+          </div>
+      </div>
+      <script>
+        let isFirstOpen = true;
+        var x = document.getElementById("first_opt");
+        var y = document.getElementById("second_opt");
+        y.style.display = "none";
+          function showFirstOption() {
+            if (!isFirstOpen) {
+                x.style.display = "block";
+                y.style.display = 'none';
+                isFirstOpen = true;
+            }
+          }
+          function showSecondOption(){
+            if (isFirstOpen) {
+              y.style.display = "block";
+              x.style.display = 'none';
+              isFirstOpen = false;
+            } 
+          }
+      </script>
+
+    </body>
+  </html>

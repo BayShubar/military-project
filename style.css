@@ -1,0 +1,95 @@
+body{
+    margin: 0;
+    padding:0;
+    background-color: white;
+  }
+input:focus {
+    outline:none;
+ }
+#menu_bar{
+    width: 30%;
+    position: relative;
+    height: auto;
+    min-height: 100% ;
+    display: inline-block;
+    overflow:hidden;
+    float: left;
+    background-color: #2F3241;
+    border-right: 1px solid #2F3241;
+    padding: 20px;
+  }
+#content_bar{
+    width: 69%;
+    position: relative;
+    height: auto;
+    overflow:hidden;
+    min-height: 100% ;
+    display: inline-block;
+    float: right;
+    overflow: scroll;
+  }
+#root{
+    width: 100%;
+    height: 600px;
+  }
+#header{
+    width: 100%;
+    height: 30px;
+    border-bottom: 1px solid #9FEAF9;
+    margin-bottom: 25px;
+  }
+.logo{
+    text-align: right;
+    color: white;
+  }
+
+  .btn_menu{
+      width:100%;
+      padding: 15px;
+      border: 1px solid #2F3241;
+      color: white;
+      background-color: #2F3241;
+      border-bottom: 1px solid #9FEAF9;
+      text-align: right;
+      font-size: 14px;
+  }
+.btn_menu:focus {
+    outline:0;
+    font-size: 15px;
+}
+.btn_menu:hover {
+  font-size: 16px;
+}
+
+/* ###########################first_content########################## */
+
+#first_content{
+    background-color: aliceblue;
+    width: 100%;
+    padding: 20px;
+}
+.input-group-addon{
+  background-color: #2F3241;
+  color: white;
+}
+.form-control{
+  border: 1px solid #2F3241;
+}
+.input-group{
+  margin-bottom: 10px;
+}
+.form-control:focus{
+  outline:none;
+  border-bottom: 1px solid #2F3241;
+  background-color: #2F3241;
+  color: white;
+}
+
+.btn{
+  background-color: #2F3241;
+  border: 1px solid #2F3241;
+}
+
+.data_input{
+  margin: 15px;
+}
