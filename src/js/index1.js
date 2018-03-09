@@ -1,18 +1,71 @@
-let isFirstOpen = true;
-        var x = document.getElementById("first_opt");
-        var y = document.getElementById("second_opt");
-        y.style.display = "none";
+//##################INPUT OPTIONS##########################
+var state = {
+    extraWork: false,
+    Xknp: null,
+    Yknp: null,
+    Hknp: null,
+}
+var temporary = {
+    alfa : 0,
+    dk : 0,
+    mc : 0
+}
+
+//##################INPUT OPTIONS##########################
+var x = document.getElementById("first_opt");
+var y = document.getElementById("second_opt");
+y.style.display = "none";
 function showFirstOption() {
-    if (!isFirstOpen) {
+    if (state.extraWork) {
         x.style.display = "block";
         y.style.display = 'none';
-        isFirstOpen = true;
+        state.extraWork = false;
     }
 }
 function showSecondOption(){
-if (isFirstOpen) {
-    y.style.display = "block";
-    x.style.display = 'none';
-    isFirstOpen = false;
-} 
+    if (!state.extraWork) {
+        y.style.display = "block";
+        x.style.display = 'none';
+        state.extraWork = true;
+    } 
 }
+
+//#####################INEXTRA WORK#######################
+
+function extraWork(){
+    if(state.extraWork){
+        console.log('EXTRA WORK')
+    }
+}
+
+//#######################INPUT HANDLER###################
+
+
+
+function inputCheker(){
+    state.Xknp = document.getElementById('x').value;
+    state.Yknp = document.getElementById('y').value;
+    state.Hknp = document.getElementById('h').value;
+
+    //some error happen
+    if(state.Xknp === '' || state.Yknp === '' || state.Hknp === ''){
+        console.log('ERROR HAPPEN')
+    //if there no error
+    }else{
+        console.log('NO ERROR')
+    }
+}
+
+
+
+//#################### ENGINE ########################
+
+function engine(){
+    inputCheker();
+    extraWork();
+}
+
+
+
+//#######################################################################
+//#######################################################################
