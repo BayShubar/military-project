@@ -61,6 +61,20 @@ input:focus {
   font-size: 16px;
 }
 
+.front_angle{
+  width: 150px;
+  float: right;
+  padding: 7px;
+  background-color: white;      
+  border: 1px solid #2F3241;
+}
+.front_input{
+  width: 50px;
+  background-color: white;
+  border: 0px solid white;
+  display: inline-block;
+}
+
 /* ###########################first_content########################## */
 
 #first_content{
