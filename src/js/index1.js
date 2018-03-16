@@ -4,6 +4,10 @@ var state = {
     Xknp: null,
     Yknp: null,
     Hknp: null,
+    Xop: null,
+    Yop: null,
+    Hop: null,
+    AlfaOn: null,
 }
 var temporary = {
     alfa : 0,
@@ -41,11 +45,16 @@ function extraWork(){
 //#######################INPUT HANDLER###################
 
 
-
 function inputCheker(){
     state.Xknp = document.getElementById('x').value;
     state.Yknp = document.getElementById('y').value;
     state.Hknp = document.getElementById('h').value;
+    state.Xop = document.getElementById('h').value;
+    state.Yop = document.getElementById('h').value;
+    state.Hop = document.getElementById('h').value;
+    state.AlfaOn = document.getElementById('h').value;
+
+    
 
     //some error happen
     if(state.Xknp === '' || state.Yknp === '' || state.Hknp === ''){
