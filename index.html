@@ -156,36 +156,40 @@
 
 
 
-              <div>
-                <button type="button" class="btn btn-primary" onclick="showFirstOption()">плоские прямоугольные</button>
-                <button type="button" class="btn btn-primary" onclick="showSecondOption()">полярные координаты</button>
+              <div><br><span class="input-group-addon">Бюллетень метеосредний: </span><br>
+                
+                <button type="button" class="btn btn-primary" onclick="showFirstOption()">Вычислить</button>
+                <button type="button" class="btn btn-primary" onclick="showSecondOption()">Ввести вручную</button>
+                <br><br>
                 <div id = 'firsttt' class = 'data_input'>
                     <div class="input-group">
-                        <span class="input-group-addon">Xy: </span>
+                        
+                        <span class="input-group-addon">Температура воздуха: </span>
                         <input id="Xy" type="number" class="form-control"  placeholder="Xy ...">
                     </div> <br/>
                     <div class="input-group">
-                        <span class="input-group-addon">Yy: </span>
+                        <span class="input-group-addon">Наземное атмосферное давление: </span>
                         <input id="Yy" type="number" class="form-control"  placeholder="Yy ...">
                     </div><br/>
                     <div class="input-group">
-                        <span class="input-group-addon">hy: </span>
+                        <span class="input-group-addon">Угол ветра: </span>
+                        <input id="hy" type="number" class="form-control"  placeholder="hy ...">
+                    </div><br/>
+                    <div class="input-group">
+                        <span class="input-group-addon">Скорость ветра: </span>
+                        <input id="hy" type="number" class="form-control"  placeholder="hy ...">
+                    </div><br/>
+                    <div class="input-group">
+                        <span class="input-group-addon">Высота метеопоста: </span>
                         <input id="hy" type="number" class="form-control"  placeholder="hy ...">
                     </div><br/>
                 </div>
                 <div id = 'seconddd' class = 'data_input'>
                     <div class="input-group">
-                        <span class="input-group-addon">αk: </span>
-                        <input id="aK" type="number" class="form-control"  placeholder="αk ...">
+                        <span class="input-group-addon"> Введите даные</span>
+                        <input id="aK" class="form-control"  placeholder="Метео-">
                     </div> <br/>
-                    <div class="input-group">
-                        <span class="input-group-addon">Дк: </span>
-                        <input id="Dk" type="number" class="form-control"  placeholder="Дк ...">
-                    </div><br/>
-                    <div class="input-group">
-                        <span class="input-group-addon">Мц: </span>
-                        <input id="mC" type="number" class="form-control"  placeholder="Мц ...">
-                    </div><br/>
+                    
                 </div>
               </div>
 

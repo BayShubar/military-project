@@ -67,5 +67,22 @@ function engine(){
 
 
 
+//#################### METEO DANNIE ########################
 //#######################################################################
-//#######################################################################
+var a = document.getElementById("firsttt");
+var b = document.getElementById("seconddd");
+b.style.display = "none";
+function showFirstOption() {
+    if (state.extraWork) {
+        a.style.display = "block";
+        b.style.display = 'none';
+        state.extraWork = false;
+    }
+}
+function showSecondOption(){
+    if (!state.extraWork) {
+        b.style.display = "block";
+        a.style.display = 'none';
+        state.extraWork = true;
+    } 
+}
