@@ -45,7 +45,6 @@ function extraWork(){
 //#######################INPUT HANDLER###################
 
 
-
 function inputCheker(){
     state.Xknp = document.getElementById('x').value;
     state.Yknp = document.getElementById('y').value;
@@ -54,6 +53,8 @@ function inputCheker(){
     state.Yop = document.getElementById('h').value;
     state.Hop = document.getElementById('h').value;
     state.AlfaOn = document.getElementById('h').value;
+
+    
 
     //some error happen
     if(state.Xknp === '' || state.Yknp === '' || state.Hknp === ''){
