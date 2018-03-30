@@ -140,7 +140,6 @@ function engine(){
 var a = document.getElementById("firsttt");
 var b = document.getElementById("seconddd");
 b.style.display = "none";
-<<<<<<< HEAD
 function showFirstOptionMeteo() {
     if (state.extraWork) {
         a.style.display = "block";
@@ -153,7 +152,6 @@ function showSecondOptionMeteo(){
         b.style.display = "block";
         a.style.display = 'none';
         meteoData.extraWork1 = true;
-=======
 var stateMeteo = {
     extraWork: false,
 }
@@ -169,7 +167,6 @@ function showSecondOptionMeteo(){
         b.style.display = "block";
         a.style.display = 'none';
         stateMeteo.extraWork = true;
->>>>>>> 904608669df31802beb38830955536bcb2cb51f7
     } 
 }
 function meteoHandler(event){
