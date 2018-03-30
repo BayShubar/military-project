@@ -8,11 +8,22 @@ var state = {
     Yop: null,
     Hop: null,
     AlfaOn: null,
+
+    Xy: null,
+    Yy: null,
+    hy: null,
+
 }
-var temporary = {
-    alfa : 0,
-    dk : 0,
-    mc : 0
+var extraData = {
+    alfaAngle : null,
+    dk : null,
+    mc : null
+}
+
+//################## UTILS ##########################
+
+function toRadian(DEG){
+    return DEG * (Math.PI/180)
 }
 
 //##################INPUT OPTIONS##########################
@@ -34,34 +45,36 @@ function showSecondOption(){
     } 
 }
 
-//#####################INEXTRA WORK#######################
-
-function extraWork(){
-    if(state.extraWork){
-        console.log('EXTRA WORK')
-    }
-}
-
 //#######################INPUT HANDLER###################
 
 
 function inputCheker(){
-    state.Xknp = document.getElementById('x').value;
-    state.Yknp = document.getElementById('y').value;
-    state.Hknp = document.getElementById('h').value;
-    state.Xop = document.getElementById('h').value;
-    state.Yop = document.getElementById('h').value;
-    state.Hop = document.getElementById('h').value;
-    state.AlfaOn = document.getElementById('h').value;
+    state.Xknp  =    parseInt(document.getElementById('x').value);
+    state.Yknp  =    parseInt(document.getElementById('y').value);
+    state.Hknp  =    parseInt(document.getElementById('h').value);
+    state.Xop   =    parseInt(document.getElementById('h').value);
+    state.Yop   =    parseInt(document.getElementById('h').value);
+    state.Hop   =    parseInt(document.getElementById('h').value);
+    state.AlfaOn =  parseInt(document.getElementById('h').value);
 
-    
+    if(state.extraWork){
+        extraData.alfaAngle = document.getElementById('aK').value;
+        extraData.dk = document.getElementById('Dk').value;
+        extraData.mc = document.getElementById('mC').value;
+    }else{
+        state.Xy = document.getElementById("Xy").value;
+        state.Yy = document.getElementById("Yy").value;
+        state.hy = document.getElementById("hy").value;
+    }
 
     //some error happen
     if(state.Xknp === '' || state.Yknp === '' || state.Hknp === ''){
-        console.log('ERROR HAPPEN')
+        console.log('### NOT ALL FILLED ###')
+
     //if there no error
     }else{
-        console.log('NO ERROR')
+        console.log('### ALL FILDS FILLED ###')
+
     }
 }
 
@@ -69,10 +82,48 @@ function inputCheker(){
 
 //#################### ENGINE ########################
 
+function extraWork(){
+    console.log('### EXTRA WORK ###');
+    let X = Math.round(Math.cos(toRadian(extraData.alfaAngle * 6)) * 2740)
+    let Y = Math.round(Math.sin(toRadian(extraData.alfaAngle * 6)) * 2740)
+    console.log(X, Y);
+    state.Xy = state.Xknp + X;
+    state.Yy = state.Yknp + Y;
+    state.hy = Math.round(state.Hknp + extraData.mc * 0.001 * extraData.dk);
+    console.log( state.Xy, state.Yy, state.hy );    
+    
+}
+
+
+function calculate(){
+    console.log('### CALCULATE ###');
+}
+
 function engine(){
     inputCheker();
-    extraWork();
+    //if here needed calculate from polar cordinate
+    if(state.extraWork){       
+        extraWork();
+    }else{
+        calculate();
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -81,17 +132,20 @@ function engine(){
 var a = document.getElementById("firsttt");
 var b = document.getElementById("seconddd");
 b.style.display = "none";
-function showFirstOption() {
-    if (state.extraWork) {
+var stateMeteo = {
+    extraWork: false,
+}
+function showFirstOptionMeteo() {
+    if (stateMeteo.extraWork) {
         a.style.display = "block";
         b.style.display = 'none';
-        state.extraWork = false;
+        stateMeteo.extraWork = false;
     }
 }
-function showSecondOption(){
-    if (!state.extraWork) {
+function showSecondOptionMeteo(){
+    if (!stateMeteo.extraWork) {
         b.style.display = "block";
         a.style.display = 'none';
-        state.extraWork = true;
+        stateMeteo.extraWork = true;
     } 
 }
