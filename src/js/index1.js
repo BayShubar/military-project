@@ -152,22 +152,7 @@ function showSecondOptionMeteo(){
         b.style.display = "block";
         a.style.display = 'none';
         meteoData.extraWork1 = true;
-var stateMeteo = {
-    extraWork: false,
-}
-function showFirstOptionMeteo() {
-    if (stateMeteo.extraWork) {
-        a.style.display = "block";
-        b.style.display = 'none';
-        stateMeteo.extraWork = false;
     }
-}
-function showSecondOptionMeteo(){
-    if (!stateMeteo.extraWork) {
-        b.style.display = "block";
-        a.style.display = 'none';
-        stateMeteo.extraWork = true;
-    } 
 }
 function meteoHandler(event){
     console.log(event);
