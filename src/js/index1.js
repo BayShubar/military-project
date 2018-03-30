@@ -14,6 +14,14 @@ var temporary = {
     dk : 0,
     mc : 0
 }
+var meteoData = {
+    extraWork1: false,
+    temperOfAir: null,
+    nazemDavlen: null,    
+    ugolVetra: null,
+    skorostVetra: null,
+    VysotaMEteo: null
+}
 
 //##################INPUT OPTIONS##########################
 var x = document.getElementById("first_opt");
@@ -81,17 +89,69 @@ function engine(){
 var a = document.getElementById("firsttt");
 var b = document.getElementById("seconddd");
 b.style.display = "none";
-function showFirstOption() {
+function showFirstOptionMeteo() {
     if (state.extraWork) {
         a.style.display = "block";
         b.style.display = 'none';
-        state.extraWork = false;
+        meteoData.extraWork1 = false;
     }
 }
-function showSecondOption(){
+function showSecondOptionMeteo(){
     if (!state.extraWork) {
         b.style.display = "block";
         a.style.display = 'none';
-        state.extraWork = true;
+        meteoData.extraWork1 = true;
     } 
 }
+function meteoHandler(event){
+    console.log(event);
+    var x = getElementById("meteoruch").value;
+    
+}
+
+
+
+
+
+//#######################VVESTI VRYCHNUY
+function mask(inputName, mask, evt) { 
+    try { 
+    var text = document.getElementById(inputName); 
+    var value = text.value;
+    // If user pressed DEL or BACK SPACE, clean the value 
+   /* try { 
+    var e = (evt.which) ? evt.which : event.keyCode; 
+    if ( e == 46 || e == 8 ) { 
+    text.value = ""; 
+    return; 
+    } 
+    } catch (e1) {} 
+    */
+    var literalPattern=/[0\*]/; 
+    var numberPattern=/[0-9]/; 
+    var newValue = ""; 
+    
+    for (var vId = 0, mId = 0 ; mId < mask.length ; ) { 
+    if (mId >= value.length) 
+    break; 
+    
+    // Number expected but got a different value, store only the valid portion 
+    if (mask[mId] == '0' && value[vId].match(numberPattern) == null) { 
+    break; 
+    } 
+    
+    // Found a literal 
+    while (mask[mId].match(literalPattern) == null) { 
+    if (value[vId] == mask[mId]) 
+    break; 
+    
+    newValue += mask[mId++]; 
+    } 
+    
+    newValue += value[vId++]; 
+    mId++; 
+    } 
+    
+    text.value = newValue; 
+    } catch(e) {} 
+    } 
