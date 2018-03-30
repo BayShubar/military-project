@@ -141,14 +141,14 @@ var a = document.getElementById("firsttt");
 var b = document.getElementById("seconddd");
 b.style.display = "none";
 function showFirstOptionMeteo() {
-    if (state.extraWork) {
+    if (meteoData.extraWork1) {
         a.style.display = "block";
         b.style.display = 'none';
         meteoData.extraWork1 = false;
     }
 }
 function showSecondOptionMeteo(){
-    if (!state.extraWork) {
+    if (!meteoData.extraWork1) {
         b.style.display = "block";
         a.style.display = 'none';
         meteoData.extraWork1 = true;
